@@ -4,8 +4,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Router } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, } from '@angular/forms';
-// import { FormGroup } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { Ng2DropdownModule } from 'ng2-material-dropdown';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +20,14 @@ import { CustomMaterialModule } from './material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { HeaderComponent } from './components/header/header.component';
+import { LayoutComponent } from './components/layout/layout.component';
+import { FooterComponent } from './components/footer/footer.component';
+
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatCardModule } from '@angular/material/card';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +37,12 @@ import { RegisterComponent } from './components/register/register.component';
     EditComponent,
     DeleteComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    NavbarComponent,
+    HeaderComponent,
+    LayoutComponent,
+    FooterComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
@@ -39,10 +53,11 @@ import { RegisterComponent } from './components/register/register.component';
     FormsModule,
     CustomMaterialModule,
     BrowserAnimationsModule,
-    // FormGroup,
-    // FormBuilder,
-    // Validators,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    Ng2DropdownModule,
+    NgbModule,
+    MatToolbarModule,
+    MatCardModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
