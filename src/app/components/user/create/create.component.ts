@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { User } from 'src/app/model/user.model';
-import { UserService } from 'src/app/service/user.service';
+import { UserService } from 'src/app/service/user-service/user.service';
 
 @Component({
   selector: 'app-create',
@@ -22,6 +22,7 @@ export class CreateComponent implements OnInit {
     this.userService.addUser(this.users)
         .subscribe(data => {
           alert("User Added Successfully");
+          this.router.navigate(['index']);
         });
   };
 

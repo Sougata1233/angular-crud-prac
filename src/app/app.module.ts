@@ -3,7 +3,9 @@ import { NgModule } from '@angular/core';
 
 import { RouterModule, Router } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, } from '@angular/forms';
+// import { FormGroup } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +15,10 @@ import { EditComponent } from './components/user/edit/edit.component';
 import { DeleteComponent } from './components/user/delete/delete.component';
 import { appRoutes } from './routerConfig';
 import { UserService } from './service/user-service/user.service';
+import { CustomMaterialModule } from './material.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +26,9 @@ import { UserService } from './service/user-service/user.service';
     IndexComponent,
     CreateComponent,
     EditComponent,
-    DeleteComponent
+    DeleteComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +36,13 @@ import { UserService } from './service/user-service/user.service';
     RouterModule,
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    CustomMaterialModule,
+    BrowserAnimationsModule,
+    // FormGroup,
+    // FormBuilder,
+    // Validators,
+    ReactiveFormsModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

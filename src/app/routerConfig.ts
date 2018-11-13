@@ -1,8 +1,10 @@
 import { Routes } from '@angular/router';
-import { IndexComponent } from './components/index/index.component';
-import { CreateComponent } from './components/create/create.component';
-import { EditComponent } from './components/edit/edit.component';
-import { DeleteComponent } from './components/delete/delete.component';
+import { IndexComponent } from './components/user/index/index.component';
+import { CreateComponent } from './components/user/create/create.component';
+import { EditComponent } from './components/user/edit/edit.component';
+import { DeleteComponent } from './components/user/delete/delete.component';
+import { LoginComponent } from './components/login/login.component';
+import {  RegisterComponent } from './components/register/register.component';
 
 export const appRoutes : Routes = [
     {
@@ -10,7 +12,7 @@ export const appRoutes : Routes = [
         component: CreateComponent
     },
     {
-        path: 'edit',
+        path: 'edit/:id',
         component: EditComponent
     },
     {
@@ -20,5 +22,13 @@ export const appRoutes : Routes = [
     {
         path: 'index',
         component: IndexComponent
+    },
+    {
+        path: 'login',
+        component: LoginComponent
+    },
+    {
+        path: 'register',
+        component: RegisterComponent
     }
 ];
